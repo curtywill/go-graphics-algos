@@ -35,11 +35,13 @@ func TestCohenSutherland(t *testing.T) {
 	if !clip {
 		t.Fatalf("CohenSutherlandClipping2D(%f, %f, %f, %f)=%t, got %t", x1, y1, x2, y2, true, false)
 	}
+
 	x1, y1, x2, y2 = 700, 50, 800, 100
 	clip = CohenSutherlandClipping2D(x1, y1, x2, y2)
 	if clip {
 		t.Fatalf("CohenSutherlandClipping2D(%f, %f, %f, %f)=%t, got %t", x1, y1, x2, y2, false, true)
 	}
+
 	x1, y1, x2, y2 = -100, 400, 300, 700
 	clip = CohenSutherlandClipping2D(x1, y1, x2, y2)
 	if !clip {
